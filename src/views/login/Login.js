@@ -3,16 +3,19 @@ import { Form, Input, Button, Checkbox } from 'antd';
 
 const formlayout = {
   labelCol: {
-    span: 4,
+    span: 8,
   },
   wrapperCol: {
-    span: 4,
+    span: 10,
   },
 };
 const tailLayout = {
+  labelCol: {
+    span: 8,
+  },
   wrapperCol: {
-    offset: 4,
-    span: 4,
+    offset: 8,
+    span: 10,
   },
 };
 
@@ -27,7 +30,7 @@ const Login = () => {
 
   return (
     <div>
-      <Form layout="horizontal" {...formlayout} name="basic" initialValues={{ remember: true}} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+      <Form {...formlayout} name="basic" initialValues={{ remember: true}} onFinish={onFinish} onFinishFailed={onFinishFailed}>
         <Form.Item label="Username" name="username" 
           rules={[
             {
