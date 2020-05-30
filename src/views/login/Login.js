@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Form, Input, Button, Checkbox } from 'antd';
 
 const formlayout = {
@@ -27,7 +27,8 @@ const Login = () => {
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo);
   };
-
+  const [name,setName] = useState('')
+  const [pwd,setPwd] = useState('')
   return (
     <div>
       <Form {...formlayout} name="basic" initialValues={{ remember: true}} onFinish={onFinish} onFinishFailed={onFinishFailed}>
@@ -39,7 +40,9 @@ const Login = () => {
             },
           ]}
         >
-          <Input />
+          <Input maxLength={10} onChange={(event)=>{
+            setName(event.target.value)
+          }}/>
         </Form.Item>
 
         <Form.Item
@@ -52,7 +55,9 @@ const Login = () => {
             },
           ]}
         >
-          <Input.Password />
+          <Input.Password maxLength={20} onChange={(event)=>{
+            setPwd(event.target.value)
+          }}/>
         </Form.Item>
 
         <Form.Item {...tailLayout} name="remember" valuePropName="checked">
@@ -60,7 +65,7 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" onClick={}>
             Submit
           </Button>
         </Form.Item>

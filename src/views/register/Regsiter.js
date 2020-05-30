@@ -1,0 +1,10 @@
+import React from 'react';
+
+export default function Regsiter(){
+  return(
+    <div>
+      <h1>this is home</h1>
+    </div>
+  )
+}
+
